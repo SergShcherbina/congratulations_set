@@ -36,6 +36,12 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+.woman {
+    background-color: #FFF1F8;;
+}
+.man{
+    background-color: #EFF9FE;;
+}
 button {
     cursor: pointer;
 }
@@ -52,7 +58,6 @@ button {
     box-shadow: 0px 1px 20px rgba(72, 3, 38, 0.07);
 }
 .header__container {
-    padding: 0 20px;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
@@ -60,7 +65,6 @@ button {
 .header__button-change{
     width: 300px;
     height: 65px;
-    background: #C300C7;
     border-radius: 30px;
     margin-right: 30px;
     font-family: 'Open Sans';
@@ -72,8 +76,13 @@ button {
 .header__button-change:last-child{
     margin-right: 0;
 }
+.man .header__button-change {
+    background: #1178B2;
+}
+.woman .header__button-change {
+    background: #C300C7;
+}
 .header__button-gender{
-    /* background-color: #FFFFFF; */
     width: 60px;
     height: 60px;
     box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.04);
@@ -87,6 +96,12 @@ button {
     background: url('../img/women.svg') center no-repeat;;
     margin-left: 20px;
 }
+.man .header__button-gender_men{
+    border: solid 1px #1178B2;
+}
+.woman .header__button-gender_women{
+    border: solid 1px #C300C7;
+}
 img{
     max-width: 100%;
     height: auto;
@@ -99,11 +114,19 @@ ul{
     padding: 0;
     list-style: none;
 }
+
 .card{
     display: flex;
     align-items: center;
     flex-grow: 1;
     padding: 15px 0;
+}
+.woman .card__text {
+    font-family: 'Bad Script';
+}
+.man .card__text {
+    font-family: 'Open Sans';
+    font-weight: 700;
 }
 .card__wrapper{
     margin: auto;
@@ -138,6 +161,14 @@ ul{
     display: flex;
     gap: 16px;
 }
+.man svg path{
+    fill: #1178B2;
+}
+
+.woman svg path{
+    fill: #C300C7;
+}
+
 @media(max-width: 880px) {
     .container{
         padding: 0 10px;
