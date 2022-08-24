@@ -36,11 +36,11 @@ body {
     flex-direction: column;
     height: 100vh;
 }
-.woman {
-    background-color: #FFF1F8;;
+.women {
+    background-color: #FFF1F8;
 }
-.man{
-    background-color: #EFF9FE;;
+.men{
+    background-color: #EFF9FE;
 }
 button {
     cursor: pointer;
@@ -48,6 +48,7 @@ button {
 .container {
     display: flex;
     max-width: 1300px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 .header {
@@ -72,15 +73,21 @@ button {
     font-size: 18px;
     font-weight: 700;
     border: none;
+    transition: all 0.2s ease;
+    
+}
+.header__button-change:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.2);
 }
 .header__button-change:last-child{
     margin-right: 0;
 }
-.man .header__button-change {
-    background: #1178B2;
+.men .header__button-change {
+    background-color: #1178B2;
 }
-.woman .header__button-change {
-    background: #C300C7;
+.women .header__button-change {
+    background-color: #C300C7;
 }
 .header__button-gender{
     width: 60px;
@@ -88,6 +95,7 @@ button {
     box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
     border: none;
+    transition: all 0.2s ease;
 }
 .header__button-gender_men{
     background: url('../img/men.svg') center no-repeat;
@@ -96,10 +104,18 @@ button {
     background: url('../img/women.svg') center no-repeat;;
     margin-left: 20px;
 }
-.man .header__button-gender_men{
+.header__button-gender_men:hover{
+    background-color:#EFF9FE;
+    transform: translateY(-3px);
+}
+.header__button-gender_women:hover{
+    background-color:#FFF1F8;
+    transform: translateY(-3px);
+}
+.men .header__button-gender_men{
     border: solid 1px #1178B2;
 }
-.woman .header__button-gender_women{
+.women .header__button-gender_women{
     border: solid 1px #C300C7;
 }
 img{
@@ -114,23 +130,23 @@ ul{
     padding: 0;
     list-style: none;
 }
-
-.card{
-    display: flex;
-    align-items: center;
+.card{    
     flex-grow: 1;
     padding: 15px 0;
+    display: flex;
+    align-items: center;
 }
-.woman .card__text {
+.women .card__text {
     font-family: 'Bad Script';
 }
-.man .card__text {
+.men .card__text {
     font-family: 'Open Sans';
     font-weight: 700;
 }
 .card__wrapper{
-    margin: auto;
     position: relative;
+    display: flex;
+    margin: auto;
     box-shadow: 0px 0px 50px rgba(96, 4, 50, 0.23);
     font-size: 3px;
 }
@@ -157,15 +173,23 @@ ul{
     flex-direction: column;
     gap: 8px;
 }
+.footer__link-contacts{
+    text-decoration: none;
+}
 .footer__social{
     display: flex;
     gap: 16px;
 }
-.man svg path{
+.footer__item {
+    transition: all 0.3s ease;
+}
+.footer__item:hover{
+    opacity: 0.6;
+}
+.men path{                                                            /* !изменение цвета svg */
     fill: #1178B2;
 }
-
-.woman svg path{
+.women path{
     fill: #C300C7;
 }
 
@@ -190,6 +214,22 @@ ul{
     }
     .header__button-gender_women{
         margin-left: 0;
+    }
+
+    .header__button-change:hover{
+        transform: none;
+        box-shadow: none;
+    }
+    .header__button-gender_men:hover{
+        background-color:#FFFFFF;
+        transform: none;
+    }
+    .header__button-gender_women:hover{
+        background-color:#FFFFFF;
+        transform: none;
+    }
+    .footer__item:hover{
+        opacity: 1;
     }
 }
 @media(max-width: 480px){
