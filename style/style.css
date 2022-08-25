@@ -74,7 +74,6 @@ button {
     font-weight: 700;
     border: none;
     transition: all 0.2s ease;
-    
 }
 .header__button-change:hover{
     transform: translateY(-3px);

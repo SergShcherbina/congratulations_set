@@ -15,12 +15,12 @@ const getRandomForArr = (arr) => {                                         //р�
     return arr[randomNumber];
 };
 
-const getData = () => {                                                    //получаем промис с базы данных
+const getData = () => {                                                    //получаем промис из базы данных
     return fetch('db.json').then(response => response.json());
 };
 
 const changeDOM = () => {
-    if(state.photo.includes('black')){                                     //если в названии картинки есть слово black то
+    if(state.photo.includes('black')){                                     //если в названии картинки есть слово black - меняем цвет текста
         cardText.style = 'color: #fff';
     } else {
         cardText.style = '';
@@ -75,3 +75,21 @@ buttonMen.addEventListener('click', changeToMen);
 buttonWomen.addEventListener('click', chengeToWomen);
 btnChangeText.addEventListener('click', changeText);
 btnChangeImg.addEventListener('click', changeImg);
+
+//!скачивание картинки с текстом с помошью библиотеки canvas2html
+const cardWrapper = document.querySelector('.card__wrapper');
+
+cardWrapper.addEventListener('click', () => {
+
+    const newWindow = window.open(                                     //подготовили новое окно браузера для создаваемых img
+        '',
+        '', 
+        `width=840, height=520,`
+    );
+
+    html2canvas(cardWrapper).then(canvas => {                          //получили картинку в виде промиса и обрабатываем
+        canvas.style.maxWidth = "100%";
+        canvas.style.height = 'auto';
+        newWindow.document.body.prepend(canvas);                       //полученый из промиса img(canvas) помещаем в newWindow
+    });
+});
