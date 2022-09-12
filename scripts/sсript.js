@@ -1,10 +1,10 @@
 const buttonMen = document.querySelector('.header__button-gender_men');
 const buttonWomen = document.querySelector('.header__button-gender_women');
-const body = document.body;
 const cardText = document.querySelector('.card__text');
 const cardImage = document.querySelector('.card__img');
 const btnChangeText = document.querySelector('.header__button-change_text');
 const btnChangeImg = document.querySelector('.header__button-change_img');
+const body = document.body;
 
 const state = {                                                            //с помощью обьекта отслеживаем класс в body 
     gender: body.classList.contains('women') ? 'women' : 'men'                   
