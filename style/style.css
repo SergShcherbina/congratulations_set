@@ -134,6 +134,7 @@ ul{
     padding: 15px 0;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 .women .card__text {
     font-family: 'Bad Script';
@@ -158,6 +159,28 @@ ul{
     transform: translate(-50%, -50%);
     font-size: max(3em, min(calc(100vw * 3 / (840 / 3 / 2)), 6em));    /*! вычисление адаптивного размера текста//отзывкивый размер текста */
     font-display: swap;                       
+}
+.card__button {
+    line-height: 20px;
+    margin-top: 20px;
+    min-width: 100px;
+    padding: 15px;
+    border-radius: 30px;
+    font-family: 'Open Sans';
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.card__button:hover {
+    opacity: 0.8;
+}
+.men .card__button{
+    background-color: #1178B2;
+}
+.women .card__button{
+    background-color: #C300C7;
 }
 .footer{
     padding: 17px 0;

@@ -39,6 +39,7 @@ const getDateToCard = () => {                                              //п�
 }
 
 getDateToCard();
+
 const changeToMen = () => {
     if(state.gender !== 'men'){
         body.classList.add('men');
@@ -78,8 +79,9 @@ btnChangeImg.addEventListener('click', changeImg);
 
 //!скачивание картинки с текстом с помошью библиотеки canvas2html
 const cardWrapper = document.querySelector('.card__wrapper');
+const btnDowloand = document.querySelector('.card__button')
 
-cardWrapper.addEventListener('click', () => {
+btnDowloand.addEventListener('click', () => {
 
     const newWindow = window.open(                                     //подготовили новое окно браузера для создаваемых img
         '',
